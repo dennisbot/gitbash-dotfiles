@@ -10,6 +10,7 @@ alias grep='grep --color=auto'
 alias config='/usr/bin/git --git-dir=/Users/dennisbot/.dotfiles/ --work-tree=/Users/dennisbot'
 alias cpwd='pwd | clip'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
+alias os='subl "$(git rev-parse --show-toplevel)"'
 alias getremoteb="cls && git branch -r | grep -v '\->' | xargs -p -I % bash -c 'git branch --track ${0#origin/} $0' %"
 
 # Git
