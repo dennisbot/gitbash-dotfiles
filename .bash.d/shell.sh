@@ -10,7 +10,13 @@
 # ---------- General settings -------------------------------------------------
 
 # Make vim the default editor
-export EDITOR="vim"
+# export EDITOR="vim"
+# Make sublime the default editor
+export EDITOR="sublime -n -w"
+
+# After each command, append to the history file and reread it
+# TODO
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 shopt -s checkwinsize # update window size after each command
 
@@ -27,6 +33,7 @@ stty -ixon
 export HISTSIZE=500000
 export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups:ignorespace
+export HISTFILE="$HOME/.bash_eternal_history"
 # Make some commands not show up in history
 export HISTIGNORE="&:ls:cd:cd -:pwd:exit:bg:fg"
 export HISTTIMEFORMAT='%F %T '

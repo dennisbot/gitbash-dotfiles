@@ -4,16 +4,23 @@
 # history (see functions.sh, topcmd function)
 # Credit https://coderwall.com/p/o5qijw
 
+alias cls='clear'
+alias fzgrep='history|cut -c 8-|sort|uniq|grep --color'
+alias grep='grep --color=auto'
+alias config='/usr/bin/git --git-dir=/Users/dennisbot/.dotfiles/ --work-tree=/Users/dennisbot'
+alias cpwd='pwd | clip'
+alias gr='cd "$(git rev-parse --show-toplevel)"'
+alias getremoteb="cls && git branch -r | grep -v '\->' | xargs -p -I % bash -c 'git branch --track ${0#origin/} $0' %"
+
 # Git
-alias a='git add'
-alias c='git commit -m'
-alias d='git diff'
-alias g='git'
-alias h='git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar" --date=short --graph --all'
-alias p='git push && git push --tags'
-alias s='git status'
+alias ga='git add'
+alias gc='git commit -m'
+alias gd='git diff'
+alias gh='git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar" --date=short --graph --all'
+alias gp='git push && git push --tags'
+alias gs='git status'
 # Git author stats
-alias gs='git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain | grep  "^author "|sort|uniq -c|sort -nr'
+alias gas='git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain | grep  "^author "|sort|uniq -c|sort -nr'
 
 # Vagrant
 alias v='vagrant'

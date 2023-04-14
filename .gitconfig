@@ -1,18 +1,50 @@
-# This is Git's per-user configuration file.
 [user]
-	name = Bert Van Vreckem
-	email = bert.vanvreckem@gmail.com
-[push]
-	default = simple
-[github]
-	user = bertvv
-[credential]
-	helper = cache --timeout=3600
-[color]
-	ui = true
-[core]
-	excludesfile = /home/bert/.gitignore_global
-	# Don't use line endings from the local OS, keep the originals
-	autocrlf = input
+  name = Dennis Huillca
+  email = dennisbot@gmail.com
 [alias]
-	co = checkout
+  lg = log --color --graph --branches --pretty=format:'%Cred%h%Creset%C(yellow)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --abbrev-commit
+  hist = log --color --graph --pretty=format:\"%C(yellow)%h%C(reset) %s%C(bold red)%d%C(reset) %C(green)%ad%C(reset) %C(blue)[%an]%C(reset)\" --relative-date --decorate
+  unstage = reset HEAD --
+  restore = checkout --
+  cn = commit --no-verify
+  co = checkout
+  praise = blame
+  visualise = !gitk
+  quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
+  quote-string-undo = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
+  cls = "!git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d #"
+  bclean = "!f() { git branch --merged ${1-develop} | grep -v " ${1-develop}$" | xargs -r git branch -d; }; f"
+  graph = log --color --graph --pretty=format:\"%h | %ad | %an | %s%d\" --date=short
+  st = status
+  rebaseidev = "!git rebase -i $(git merge-base --fork-point dev)"
+  rebasei = "!f() { git rebase -i $(git merge-base --fork-point \"$1\");}; f"
+  dif = "!f() { git diff --color  ${1} | sed -r \"s/^([^-+ ]*)[-+ ]/\\1/\" | less -r; }; f"
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/'
+  sync = "!f() { git branch -r | grep -v '\\->' | while read remote; do git branch --track \"${remote#origin/}\" \"$remote\"; done }; f"
+[core]
+  trustctime = false
+  editor =  "code --wait"
+  # editor = 'C:\\Program Files\\Sublime Text 3\\subl.exe' -w
+  ignorecase = false
+  longpaths = true
+  excludesFile = C:/Users/dennisbot/.gitignore_global
+  autocrlf = true
+  safecrlf = false
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+[pull]
+  rebase = true
+[diff]
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[gui]
+  recentrepo = D:/github/gitflow-demo
+[push]
+    autoSetupRemote = true
+[credential]
+    helper = wincred
+    useHttpPath = true

@@ -1,0 +1,12 @@
+ThemeFile=base16-tomorrow-night-256.minttyrc
+FontHeight=16
+Font=Fira Code Retina
+Transparency=low
+ForegroundColour=255,128,128
+CursorType=line
+FontSmoothing=full
+FontWeight=450
+Columns=110
+Locale=en_US
+Charset=UTF-8
+Rows=30
