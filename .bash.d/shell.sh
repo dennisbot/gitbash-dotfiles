@@ -91,3 +91,6 @@ export hogent="${HOME}/OneDrive - Hogeschool Gent"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
 
+# After each command, append to the history file and reread it
+# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+# export PROMPT_COMMAND='history -a;history -c;history -r;$PROMPT_COMMAND'
