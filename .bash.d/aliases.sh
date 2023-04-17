@@ -16,10 +16,15 @@ alias getremoteb="cls && git branch -r | grep -v '\->' | xargs -p -I % bash -c '
 
 # Git
 alias ga='git add'
+alias gb='git branch'
 alias gc='git commit -m'
 alias gd='git diff'
-alias gh='git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar" --date=short --graph --all'
-alias gp='git push && git push --tags'
+alias gh='git hist'
+alias gl='git lg'
+alias gll='git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar" --date=short --graph --all'
+alias gpush='git push'
+alias gpull='git pull'
+alias gpt='git push && git push --tags'
 alias gs='git status'
 # Git author stats
 alias gas='git ls-tree -r -z --name-only HEAD | xargs -0 -n1 git blame --line-porcelain | grep  "^author "|sort|uniq -c|sort -nr'
