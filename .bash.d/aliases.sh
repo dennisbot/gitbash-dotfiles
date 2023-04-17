@@ -5,6 +5,7 @@
 # Credit https://coderwall.com/p/o5qijw
 
 alias cls='clear'
+alias his='history | tail -20'
 alias fzgrep='history|cut -c 8-|sort|uniq|grep --color'
 alias grep='grep --color=auto'
 alias config='/usr/bin/git --git-dir=/Users/dennisbot/.dotfiles/ --work-tree=/Users/dennisbot'
