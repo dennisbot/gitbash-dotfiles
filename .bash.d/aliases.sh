@@ -41,6 +41,11 @@ alias vS='vagrant ssh'
 alias vs='vagrant status'
 alias vu='vagrant up'
 
+#entity framework
+
+alias mm='cd "$(git rev-parse --show-toplevel)/EMS.Migrations"'
+alias cc='cd "$(git rev-parse --show-toplevel)/EMS.Client/ClientApp"'
+
 # Directory listing and file system
 # Use rational units/formats in file size & date output
 alias df='df --si'

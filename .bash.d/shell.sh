@@ -1,7 +1,7 @@
-#! /bin/bash
-#
+# ! /bin/bash
+
 # Bash Shell Configuration
-#
+
 # Sources:
 # - http://codeinthehole.com/writing/the-most-important-command-line-tip-
 #     incremental-history-searching-with-inputrc/
@@ -12,6 +12,7 @@
 # Make vim the default editor
 # export EDITOR="vim"
 # Make sublime the default editor
+
 export EDITOR="sublime -n -w"
 
 # After each command, append to the history file and reread it
