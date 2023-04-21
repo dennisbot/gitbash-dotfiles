@@ -6,7 +6,7 @@ setup.ps1 is a PowerShell script for creating symbolic links to all files and di
 To run this script open a PowerShell with administrator rights and move to this repo location, then.
 
 ```powershell
-PS <path to your repo>.\setup.ps1
+PS <path to your repo>.\home\setup.ps1
 ```
 
 The script will do the following:

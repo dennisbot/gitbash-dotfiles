@@ -20,14 +20,22 @@ function Add-Home-Symlinks {
     # echo $_.FullName.Substring((Join-Path . '').Length)
     # echo "linkPath $linkPath"
 
+    # if (Test-Path $linkPath) {
+    #   $item = Get-Item $linkPath
+    #   if ($item.LinkType -ne "SymbolicLink") {
+        
+    #   }
+    # }
+
     if (Test-Path $linkPath) {
-      $item = Get-Item $linkPath
-      if ($item.LinkType -ne "SymbolicLink") {
-        Write-Host "removing $linkPath"
-        if (-not $RunDry) {
-          Remove-Item $linkPath -Recurse -Force
-        }
+      Write-Host "removing $linkPath"
+      if (-not $RunDry) {
+        Remove-Item $linkPath -Recurse -Force
       }
+      # $item = Get-Item $linkPath
+      # if ($item.LinkType -ne "SymbolicLink") {
+        
+      # }
     }
 
     if (-not (Test-Path $linkPath)) {
