@@ -16,6 +16,7 @@ alias getremoteb="cls && git branch -r | grep -v '\->' | xargs -p -I % bash -c '
 
 # Git
 alias ga='git add'
+alias dd='gh dev..'
 alias gb='git branch'
 alias gc='git commit -m'
 alias gd='git diff'

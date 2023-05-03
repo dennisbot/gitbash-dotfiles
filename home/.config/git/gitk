@@ -51,6 +51,7 @@ set indexcirclecolor #00ff00
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor SystemWindowText
+set diffbgcolors {"#fff3f3" "#f0fff0"}
 set web_browser {cmd /c start}
 set geometry(main) 1920x997+0+24
 set geometry(state) zoomed
