@@ -12,3 +12,5 @@ If you installed Windows Terminal as a standalone application, the settings file
 ```
 
 Note that %LOCALAPPDATA% and %USERPROFILE% are environment variables that point to the respective directories. You can access them by typing them into the Windows search bar or by opening the Run dialog (Windows key + R) and entering them there.
+
+Use mklink in admin mode to link wt settings.json to this settings.json
