@@ -1,3 +1,30 @@
+if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
+  # Install Chocolatey
+  Set-ExecutionPolicy Bypass -Scope Process -Force;
+  [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+  iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+}
+
+$env:Path = [System.Environment]::GetEnvironmentVariable('Path', 'Machine') + ';' + [System.Environment]::GetEnvironmentVariable('Path', 'User')
+
+# Check and install fzf if not present
+if (-not (Get-Command fd -ErrorAction SilentlyContinue)) {
+  Write-Host "Installing ripgrep..."
+  choco install fd -y
+}
+else {
+  Write-Host "ripgrep is already installed."
+}
+
+# Check and install fzf if not present
+if (-not (Get-Command fzf -ErrorAction SilentlyContinue)) {
+  Write-Host "Installing fzf..."
+  choco install fzf -y
+}
+else {
+  Write-Host "fzf is already installed."
+}
+
 function Add-Home-Symlinks {
   param(
     [bool]$RunDry = $false

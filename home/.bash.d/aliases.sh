@@ -18,7 +18,9 @@ alias getremoteb="cls && git branch -r | grep -v '\->' | xargs -p -I % bash -c '
 alias ga='git add'
 alias dd='gh dev..'
 alias gb='git branch'
-alias gc='git commit -m'
+alias gbc='git branch | fzf --height ~60 --reverse | xargs -I {} git checkout {}'
+alias gbd='git branch | fzf --height ~60 --reverse | xargs -I {} git branch -D {}'
+alias gc='git commit'
 alias gd='git diff'
 alias gh='git hist'
 alias gl='git lg'
@@ -69,5 +71,5 @@ fi
 
 # Find stuff
 alias ff='find . -type f -name '
-alias fd='find . -type d -name '
+# alias fd='find . -type d -name '
 
