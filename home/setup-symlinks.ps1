@@ -9,11 +9,11 @@ $env:Path = [System.Environment]::GetEnvironmentVariable('Path', 'Machine') + ';
 
 # Check and install fzf if not present
 if (-not (Get-Command fd -ErrorAction SilentlyContinue)) {
-  Write-Host "Installing ripgrep..."
+  Write-Host "Installing fd..."
   choco install fd -y
 }
 else {
-  Write-Host "ripgrep is already installed."
+  Write-Host "fd is already installed."
 }
 
 # Check and install fzf if not present
