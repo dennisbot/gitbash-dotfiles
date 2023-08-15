@@ -98,7 +98,8 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -l",
+
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -c \"cd ~/temp && exec bash -l\"",
                 "font": 
                 {
                     "size": 16.0
