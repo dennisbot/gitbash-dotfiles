@@ -99,7 +99,7 @@
             },
             {
 
-                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -c \"cd ~/temp && exec bash -l\"",
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -l",
                 "font": 
                 {
                     "size": 16.0

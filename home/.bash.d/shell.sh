@@ -37,7 +37,7 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTFILE="$HOME/.bash_eternal_history"
 # Make some commands not show up in history
 export HISTIGNORE="&:ls:cd:cd -:pwd:exit:bg:fg"
-export HISTTIMEFORMAT='%F %T '
+# export HISTTIMEFORMAT='%F %T '
 
 shopt -s histappend   # append to history, don't overwrite
 shopt -s cmdhist      # enter multi-line commands as one entry

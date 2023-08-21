@@ -49,3 +49,10 @@
 [credential]
     helper = wincred
     useHttpPath = true
+[safe]
+	directory = C:/github.com/dennisbot/gitbash-dotfiles
+	directory = C:/provistacorp/repos/EMS
+	directory = C:/github.com/dennisbot/sublime-user-settings
+	directory = C:/github.com/dennisbot/sublime-text-git~
+	directory = C:/github.com/dennisbot/sublime-text-git~
+	directory = C:/github.com/dennisbot/sublime-text-git
