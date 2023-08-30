@@ -7,7 +7,7 @@ if (-not (Get-Command choco -ErrorAction SilentlyContinue)) {
 
 $env:Path = [System.Environment]::GetEnvironmentVariable('Path', 'Machine') + ';' + [System.Environment]::GetEnvironmentVariable('Path', 'User')
 
-# Check and install fzf if not present
+# Check and install fd if not present
 if (-not (Get-Command fd -ErrorAction SilentlyContinue)) {
   Write-Host "Installing fd..."
   choco install fd -y
@@ -27,6 +27,7 @@ else {
 
 function Add-Home-Symlinks {
   param(
+    [string]$HomeFolder,
     [bool]$RunDry = $false
   )
 
@@ -43,7 +44,7 @@ function Add-Home-Symlinks {
     }
 
     # echo $_.FullName.Substring($currentWorkingDir.Length)
-    $linkPath = Join-Path $HOME $_.FullName.Substring($currentWorkingDir.Length)
+    $linkPath = Join-Path $HomeFolder $_.FullName.Substring($currentWorkingDir.Length)
     # echo $_.FullName.Substring((Join-Path . '').Length)
     # echo "linkPath $linkPath"
 
@@ -76,15 +77,21 @@ function Add-Home-Symlinks {
 
 # Prompt the user for an option
 $option = Read-Host "Do you want to run dry first? (Y/N)"
+$homeFolder = Read-Host "Enter the path to the home folder (leave blank to use $HOME):"
+# Use the provided home folder or fall back to $HOME
+if ($homeFolder -eq "") {
+  $homeFolder = $HOME
+  Write-Host "homeFolder provided is: $homeFolder"
+}
 
 # Check if the user selected "Y"
 if ($option -eq "Y") {
   Write-Host "running dry ..."
-  Add-Home-Symlinks -RunDry $true
+  Add-Home-Symlinks -HomeFolder $homeFolder -RunDry $true
   Write-Host "run dry has finished"
   # Perform some action
 }
 else {
-  Add-Home-Symlinks -RunDry $false
+  Add-Home-Symlinks -HomeFolder $homeFolder -RunDry $false
 }
 
