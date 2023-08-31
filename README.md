@@ -21,3 +21,5 @@ The script will do the following:
 additionally, if you want to set msys2 mingw64 (to run C++ apps in windows), you need to install this same ps1 file but pointing to your new home location which for my case was `C:\msys64\home\dennisbot`, after that you will need to include some configurations in vscode for it to work properly in an embeded vscode shell.
 
 see: https://github.com/dennisbot/cp
+
+use pacman to install git, fd and fzf in msys2 env
