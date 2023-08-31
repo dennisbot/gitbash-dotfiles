@@ -1,5 +1,5 @@
 # ~/.bash_profile
-if [[ -f /usr/bin/msys-2.0.dll ]]; then
+if [ ! -f "$HOME/NTUSER.DAT" ]; then
   export RUNNING_IN_MSYS2=1
 fi
 if [[ -n $RUNNING_IN_MSYS2 ]]; then
