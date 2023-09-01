@@ -11,3 +11,4 @@ source "$HOME/.fzf/shell/completion.bash" 2> /dev/null
 # Key bindings
 # ------------
 source "$HOME/.fzf/shell/key-bindings.bash"
+source "$HOME/.fzf/shell/custom-binding.bash"
