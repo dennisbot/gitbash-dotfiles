@@ -1,10 +1,10 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -20,7 +20,7 @@
             "keys": "ctrl+shift+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -29,10 +29,10 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "multipleActions",
-                "actions": 
+                "actions":
                 [
                     {
                         "action": "clearBuffer",
@@ -47,14 +47,14 @@
             "keys": "ctrl+k"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "nextTab"
             },
             "keys": "ctrl+pgdn"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "prevTab"
             },
@@ -68,16 +68,22 @@
     "defaultProfile": "{473d9fe7-4cce-44b7-b1dc-4c8a8cfb4746}",
     "initialCols": 130,
     "initialPosition": "100,100",
-    "newTabMenu": 
+    "newTabMenu":
     [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
+    "profiles":
     {
-        "defaults": {},
-        "list": 
+        "defaults":
+        {
+            "font":
+            {
+                "size": 16.0
+            }
+        },
+        "list":
         [
             {
                 "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
@@ -98,16 +104,18 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -l",
-                "font": 
-                {
-                    "size": 16.0
-                },
                 "guid": "{473d9fe7-4cce-44b7-b1dc-4c8a8cfb4746}",
                 "hidden": false,
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
                 "name": "Git Bash"
+            },
+            {
+                "commandline": "env CHERE_INVOKING=1 MSYSTEM=MINGW64 C:\\msys64\\usr\\bin\\bash.exe --login -i",
+                "guid": "{2e1f7332-f218-4e15-9abe-df88b7f3e6ef}",
+                "hidden": false,
+                "icon": "C:\\msys64\\mingw64.ico",
+                "name": "bash (MSYS2)"
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -117,7 +125,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
@@ -351,17 +359,17 @@
         }
     ],
     "showTabsInTitlebar": true,
-    "themes": 
+    "themes":
     [
         {
             "name": "legacyDark",
-            "tab": 
+            "tab":
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window": 
+            "window":
             {
                 "applicationTheme": "dark",
                 "useMica": false
@@ -369,13 +377,13 @@
         },
         {
             "name": "legacyLight",
-            "tab": 
+            "tab":
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window": 
+            "window":
             {
                 "applicationTheme": "light",
                 "useMica": false
@@ -383,13 +391,13 @@
         },
         {
             "name": "legacySystem",
-            "tab": 
+            "tab":
             {
                 "background": null,
                 "showCloseButton": "always",
                 "unfocusedBackground": null
             },
-            "window": 
+            "window":
             {
                 "applicationTheme": "system",
                 "useMica": false
