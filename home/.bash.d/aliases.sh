@@ -18,7 +18,7 @@ alias ssm='start wt new-tab -p "{2e1f7332-f218-4e15-9abe-df88b7f3e6ef}"'
 
 # Git
 alias ga='git add'
-alias dd='gh dev..'
+# alias dd='gh dev..' we have a function that does more things in shell.sh
 alias gb='git branch'
 alias gbc='git branch | fzf --height ~60 --reverse | xargs -I {} git checkout {}'
 alias gbd='git branch | fzf --height ~60 --reverse | xargs -I {} git branch -D {}'

@@ -96,3 +96,11 @@ export PATH=$PATH:"/c/Program Files/Sublime Text 3/"
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 # export PROMPT_COMMAND='history -a;history -c;history -r;$PROMPT_COMMAND'
+dd() {
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    if [ "$current_branch" == "dev" ] || [ "$current_branch" == "master" ] || [ "$current_branch" == "main" ]; then
+        gh -5
+    else
+        gh dev..
+    fi
+}
