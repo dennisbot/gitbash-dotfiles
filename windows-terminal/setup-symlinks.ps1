@@ -11,10 +11,10 @@ function New-Symlink {
     $username = [Environment]::UserName
 
     # Define the location of the settings.json file in the Windows Terminal package
-    # $destinationLink = "C:\Users\$username\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+    $destinationLink = "C:\Users\$username\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 
     # if installed with choco -- choco install microsoft-windows-terminal --pre
-    $destinationLink = "C:\Users\$username\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json"
+    # $destinationLink = "C:\Users\$username\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json"
 
     # Get the current script directory path
     $scriptDirectory = [System.IO.Path]::GetDirectoryName($PSCommandPath)
