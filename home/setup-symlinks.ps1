@@ -25,6 +25,15 @@ else {
   Write-Host "fzf is already installed."
 }
 
+$installed = choco list --localonly | Where-Object { $_ -match "firacode" }
+
+if ($installed) {
+  Write-Host "Fira Code is already installed."
+}
+else {
+  choco install firacode -y
+}
+
 function Add-Home-Symlinks {
   param(
     [string]$HomeFolder,
