@@ -75,6 +75,12 @@ function Add-Home-Symlinks {
   }
 }
 
+# Check if running as an administrator
+if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+  Write-Error "You need to run this script as an Administrator!"
+  Exit
+}
+
 # Prompt the user for an option
 $option = Read-Host "Do you want to run dry first? (Y/N)"
 $homeFolder = Read-Host "Enter the path to the home folder (leave blank to use $HOME):"
