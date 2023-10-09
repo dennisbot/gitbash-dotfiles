@@ -85,7 +85,6 @@ shopt -s nocaseglob   # case insensitive globbing
 # Define a variable containing a path and you will be able to cd into it regardless of the directory you're in
 shopt -s cdable_vars
 export hogent="${HOME}/OneDrive - Hogeschool Gent"
-export PATH=$PATH:"/c/Program Files/Sublime Text 3/"
 
 # Examples:
 # export dotfiles="$HOME/dotfiles"
