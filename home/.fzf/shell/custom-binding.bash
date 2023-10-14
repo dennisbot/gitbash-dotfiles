@@ -1,3 +1,4 @@
+bind -x '"\e\C-s": "mkrecent"'
 bind -x '"\C-s": "fzf_pickexec"'
 fzf_pickexec() {
     local files=($(ls --color=never -t *.exe | head -n 2))
