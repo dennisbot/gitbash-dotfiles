@@ -6,7 +6,7 @@ if [ ! -f "$HOME/NTUSER.DAT" ]; then
   export RUNNING_IN_MSYS2=1
 fi
 if [[ -n $RUNNING_IN_MSYS2 ]]; then
-  export PATH="$PATH:/c/ProgramData/chocolatey/bin:/c/Program Files/Sublime Text:/c/Program Files/Git/bin"
+  export PATH="$PATH:/c/ProgramData/chocolatey/bin:/c/Program Files/Sublime Text:/c/Program Files/Git/bin:/c/Program Files/Microsoft VS Code/bin"
   # Running in MSYS2
   source "${HOME}/.config/git/git-prompt.sh"
 fi
