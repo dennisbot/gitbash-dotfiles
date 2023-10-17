@@ -77,4 +77,4 @@ fi
 # Find stuff
 alias ff='find . -type f -name '
 # alias fd='find . -type d -name '
-
+alias formatcs='/c/provistacorp/repos/format-cs-files.sh'
