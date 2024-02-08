@@ -5,10 +5,10 @@ param(
 
 function New-Symlink {
     [CmdletBinding(SupportsShouldProcess)]
-    param()
+    param(
+		[string]$username
+	)
 
-    # Get the current user's username
-    $username = [Environment]::UserName
     # Define the location of the settings.json file in the Windows Terminal package
     $storePath = "C:\Users\$username\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe"
     $chocoPath = "C:\Users\$username\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe"
@@ -71,5 +71,13 @@ if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdenti
     Exit
 }
 
+$username = Read-Host "Enter the user home folder name (leave blank to use $([Environment]::UserName)):"
+# Use the provided user home folder or fall back to $([Environment]::UserName)
+if ($username -eq "") {
+  $username = [Environment]::UserName
+}
+
+Write-Host "user home folder name to be used is: $username"
+
 # Call the function
-New-Symlink -Confirm:$Confirm
+New-Symlink -username $username -Confirm:$Confirm
