@@ -97,9 +97,9 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 # export PROMPT_COMMAND='history -a;history -c;history -r;$PROMPT_COMMAND'
 dd() {
     current_branch=$(git rev-parse --abbrev-ref HEAD)
-    if [ "$current_branch" == "dev" ] || [ "$current_branch" == "master" ] || [ "$current_branch" == "main" ]; then
+    if [ "$current_branch" == "dev" ] || [ "$current_branch" == "develop" ] || [ "$current_branch" == "master" ] || [ "$current_branch" == "main" ]; then
         gh -5
     else
-        gh dev..
+        gh develop..
     fi
 }

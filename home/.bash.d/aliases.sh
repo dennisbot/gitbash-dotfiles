@@ -52,7 +52,7 @@ alias vu='vagrant up'
 #entity framework
 
 alias mm='cd "$(git rev-parse --show-toplevel)/EMS.Migrations"'
-alias cc='cd "$(git rev-parse --show-toplevel)/EMS.Client/ClientApp"'
+alias cc='cd "$(git rev-parse --show-toplevel)/src/Client"'
 
 # Directory listing and file system
 # Use rational units/formats in file size & date output
