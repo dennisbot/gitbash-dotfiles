@@ -57,3 +57,5 @@
 	directory = C:/github.com/dennisbot/sublime-text-git~
 	directory = C:/github.com/dennisbot/sublime-text-git
 	directory = C:/provistacorp/repos/EMS_Dev_Branch
+[init]
+  defaultbranch = main
