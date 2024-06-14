@@ -35,8 +35,12 @@ else {
 }
 
 function Get-Windows-Terminal-Home-Path {
-  $storePath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe"
-  $previewPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe"
+  param(
+    [string]$TargetFolder
+  )
+
+  $storePath = "$TargetFolder\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe"
+  $previewPath = "$TargetFolder\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe"
 
   if (Test-Path $storePath) {
       $wtLocalFilesFolder = $storePath
@@ -130,26 +134,23 @@ $sourceDotFilesFolder = Join-Path -Path $PWD.Path -ChildPath "home"
 
 # Prompt the user if they also want to run the Windows Terminal script
 $runWindowsTerminal = Read-Host "Do you also want to run the Windows Terminal script? (Y/N)"
-$windowsTerminalFolder = Get-Windows-Terminal-Home-Path
+$windowsTerminalFolder = Get-Windows-Terminal-Home-Path -TargetFolder $homeFolder
 
 $sourceWindowsTerminalFolder = Join-Path -Path $PWD.Path -ChildPath "windows-terminal"
+# Set flags based on $option
+$runDry = ($option -eq "Y")
 
 # Check if the user selected "Y"
-if ($option -eq "Y") {
+if ($runDry) {
   Write-Host "running dry ..."
-  Create-Symlinks -TargetFolder $homeFolder -SourceFolder $sourceDotFilesFolder -RunDry $true
-  if ($runWindowsTerminal -eq "Y") {
-    Create-Symlinks -TargetFolder $windowsTerminalFolder -SourceFolder $sourceWindowsTerminalFolder -RunDry $true
-  }
+}
+
+Create-Symlinks -TargetFolder $homeFolder -SourceFolder $sourceDotFilesFolder -RunDry $runDry
+
+if ($runWindowsTerminal -eq "Y") {
+  Create-Symlinks -TargetFolder $windowsTerminalFolder -SourceFolder $sourceWindowsTerminalFolder -RunDry $runDry
+}
+
+if ($runDry) {
   Write-Host "run dry has finished"
-  # Perform some action
 }
-else {
-  Create-Symlinks -TargetFolder $homeFolder -SourceFolder $sourceDotFilesFolder -RunDry $false
-  if ($runWindowsTerminal -eq "Y") {
-    Create-Symlinks -TargetFolder $windowsTerminalFolder -SourceFolder $sourceWindowsTerminalFolder -RunDry $false
-  }
-}
-
-
-

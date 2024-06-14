@@ -125,13 +125,13 @@
                 "name": "bash (MSYS2)"
             },
             {
-                "guid": "{e376e3de-599d-58d5-87da-cdee5286a3db}",
+                "guid": "{d53237e3-028c-5fc4-97c9-972e48491406}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{f3925255-96a2-5f49-b503-04853b90e8c3}",
+                "guid": "{d5a9821a-60e2-5ef7-8a80-0c876a6aac88}",
                 "hidden": false,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
