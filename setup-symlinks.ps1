@@ -132,11 +132,6 @@ if ($homeFolder -eq "") {
 }
 $sourceDotFilesFolder = Join-Path -Path $PWD.Path -ChildPath "home"
 
-# Prompt the user if they also want to run the Windows Terminal script
-$runWindowsTerminal = Read-Host "Do you also want to run the Windows Terminal script? (Y/N)"
-$windowsTerminalFolder = Get-Windows-Terminal-Home-Path -TargetFolder $homeFolder
-
-$sourceWindowsTerminalFolder = Join-Path -Path $PWD.Path -ChildPath "windows-terminal"
 # Set flags based on $option
 $runDry = ($option -eq "Y")
 
@@ -147,7 +142,12 @@ if ($runDry) {
 
 Create-Symlinks -TargetFolder $homeFolder -SourceFolder $sourceDotFilesFolder -RunDry $runDry
 
+# Prompt the user if they also want to run the Windows Terminal script
+$runWindowsTerminal = Read-Host "Do you also want to run the Windows Terminal script? (Y/N)"
+
 if ($runWindowsTerminal -eq "Y") {
+  $windowsTerminalFolder = Get-Windows-Terminal-Home-Path -TargetFolder $homeFolder
+  $sourceWindowsTerminalFolder = Join-Path -Path $PWD.Path -ChildPath "windows-terminal"
   Create-Symlinks -TargetFolder $windowsTerminalFolder -SourceFolder $sourceWindowsTerminalFolder -RunDry $runDry
 }
 

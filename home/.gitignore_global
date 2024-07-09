@@ -37,3 +37,4 @@ Thumbs.db
 
 # Python virtualenv
 .ropeproject
+**/indexMiddleware.js

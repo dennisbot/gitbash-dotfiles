@@ -28,7 +28,7 @@
   # editor = 'C:\\Program Files\\Sublime Text 3\\subl.exe' -w
   ignorecase = false
   longpaths = true
-  excludesFile = C:/Users/dennisbot/.gitignore_global
+	excludesFile = ~/.gitignore_global
   autocrlf = true
   safecrlf = false
 [filter "lfs"]
@@ -53,8 +53,6 @@
 	directory = C:/github.com/dennisbot/gitbash-dotfiles
 	directory = C:/provistacorp/repos/EMS
 	directory = C:/github.com/dennisbot/sublime-user-settings
-	directory = C:/github.com/dennisbot/sublime-text-git~
-	directory = C:/github.com/dennisbot/sublime-text-git~
 	directory = C:/github.com/dennisbot/sublime-text-git
 	directory = C:/provistacorp/repos/EMS_Dev_Branch
 [init]
