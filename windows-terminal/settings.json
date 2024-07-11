@@ -118,7 +118,7 @@
                 "name": "Git Bash"
             },
             {
-                "commandline": "env CHERE_INVOKING=1 MSYSTEM=MINGW64 C:\\msys64\\usr\\bin\\bash.exe --login -i",
+                "commandline": "env CHERE_INVOKING=1 MSYSTEM=UCRT64 C:\\msys64\\usr\\bin\\bash.exe --login -i",
                 "guid": "{2e1f7332-f218-4e15-9abe-df88b7f3e6ef}",
                 "hidden": false,
                 "icon": "C:\\msys64\\mingw64.ico",
