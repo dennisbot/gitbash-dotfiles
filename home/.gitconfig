@@ -42,8 +42,6 @@
     tool = default-difftool
 [difftool "default-difftool"]
     cmd = code --wait --diff $LOCAL $REMOTE
-[gui]
-  recentrepo = D:/github/gitflow-demo
 [push]
     autoSetupRemote = true
 [credential]
