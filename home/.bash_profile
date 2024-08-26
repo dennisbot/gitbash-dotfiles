@@ -18,4 +18,5 @@ for conf in $(ls ${conf_dir}/*.sh); do
 	source "${conf}"
 done
 
-eval "$(fnm env --use-on-cd --shell bash)"
+# eval "$(fnm env --use-on-cd --shell bash)"
+alias gh='gh.exe'
