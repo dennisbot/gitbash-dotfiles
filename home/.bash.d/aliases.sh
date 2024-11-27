@@ -25,7 +25,7 @@ alias gbd='git branch | fzf --height ~60 --reverse | xargs -I {} git branch -D {
 alias mk='make -f ~/Makefile FILE=$(ls --color=never -t *.cpp | fzf --height ~60 --reverse --select-1)'
 alias mkrecent='make -f ~/Makefile FILE=$(ls --color=never -t *.cpp | head -n 1)'
 alias mkc='make -f ~/Makefile clean'
-alias gc='git commit -m'
+alias gc='git commit --no-verify -m'
 alias gd='git diff'
 alias gh='git hist'
 alias gl='git lg'

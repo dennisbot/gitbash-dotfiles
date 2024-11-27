@@ -5,8 +5,7 @@
     [
         {
             "command": "paste",
-            "id": "User.paste",
-            "keys": "ctrl+v"
+            "id": "User.paste"
         },
         {
             "command": 
@@ -24,8 +23,14 @@
                     }
                 ]
             },
-            "id": "User.multipleActions.2E965C05",
-            "keys": "ctrl+k"
+            "id": "User.multipleActions.2E965C05"
+        },
+        {
+            "command": 
+            {
+                "action": "prevTab"
+            },
+            "id": "User.prevTab.0"
         },
         {
             "command": 
@@ -33,8 +38,7 @@
                 "action": "copy",
                 "singleLine": false
             },
-            "id": "User.copy.644BA8F2",
-            "keys": "ctrl+c"
+            "id": "User.copy.644BA8F2"
         },
         {
             "command": 
@@ -43,29 +47,18 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
+            "id": "User.splitPane.A6751878"
         },
         {
             "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.find"
         },
         {
             "command": 
             {
                 "action": "nextTab"
             },
-            "id": "User.nextTab.0",
-            "keys": "ctrl+pgdn"
-        },
-        {
-            "command": 
-            {
-                "action": "prevTab"
-            },
-            "id": "User.prevTab.0",
-            "keys": "ctrl+pgup"
+            "id": "User.nextTab.0"
         }
     ],
     "alwaysOnTop": false,
@@ -75,6 +68,37 @@
     "defaultProfile": "{473d9fe7-4cce-44b7-b1dc-4c8a8cfb4746}",
     "initialCols": 130,
     "initialPosition": "100,100",
+    "keybindings": 
+    [
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.multipleActions.2E965C05",
+            "keys": "ctrl+k"
+        },
+        {
+            "id": "User.nextTab.0",
+            "keys": "ctrl+pgdn"
+        },
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.prevTab.0",
+            "keys": "ctrl+pgup"
+        }
+    ],
     "newTabMenu": 
     [
         {
@@ -143,9 +167,9 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
-                "guid": "{e5a83caa-4c73-52b3-ae6b-bc438d721ef9}",
+                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
                 "hidden": false,
-                "name": "Ubuntu 22.04.3 LTS",
+                "name": "Ubuntu 22.04.5 LTS",
                 "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             }
         ]
