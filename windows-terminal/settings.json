@@ -10,6 +10,13 @@
         {
             "command": 
             {
+                "action": "prevTab"
+            },
+            "id": "User.prevTab.0"
+        },
+        {
+            "command": 
+            {
                 "action": "multipleActions",
                 "actions": 
                 [
@@ -28,17 +35,14 @@
         {
             "command": 
             {
-                "action": "prevTab"
-            },
-            "id": "User.prevTab.0"
-        },
-        {
-            "command": 
-            {
                 "action": "copy",
                 "singleLine": false
             },
             "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
         },
         {
             "command": 
@@ -48,10 +52,6 @@
                 "splitMode": "duplicate"
             },
             "id": "User.splitPane.A6751878"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
         },
         {
             "command": 
@@ -71,20 +71,20 @@
     "keybindings": 
     [
         {
-            "id": "User.paste",
-            "keys": "ctrl+v"
-        },
-        {
             "id": "User.find",
             "keys": "ctrl+shift+f"
         },
         {
-            "id": "User.multipleActions.2E965C05",
-            "keys": "ctrl+k"
+            "id": "User.paste",
+            "keys": "ctrl+v"
         },
         {
             "id": "User.nextTab.0",
             "keys": "ctrl+pgdn"
+        },
+        {
+            "id": "User.multipleActions.2E965C05",
+            "keys": "ctrl+k"
         },
         {
             "id": "User.copy.644BA8F2",
@@ -147,30 +147,6 @@
                 "hidden": false,
                 "icon": "C:\\msys64\\mingw64.ico",
                 "name": "bash (MSYS2)"
-            },
-            {
-                "guid": "{d53237e3-028c-5fc4-97c9-972e48491406}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{d5a9821a-60e2-5ef7-8a80-0c876a6aac88}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
-                "hidden": true,
-                "name": "Ubuntu-22.04",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
-                "hidden": false,
-                "name": "Ubuntu 22.04.5 LTS",
-                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             }
         ]
     },
