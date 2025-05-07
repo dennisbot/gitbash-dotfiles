@@ -1,57 +1,55 @@
 [user]
-  name = Dennis Huillca
-  email = dennisbot@gmail.com
+name = Dennis Huillca
+email = dennisbot@gmail.com
 [alias]
-  lg = log --color --graph --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ad)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --date=iso
-  hist = log --color --graph --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-  walk = log --color --decorate --walk-reflogs --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-  unstage = reset HEAD --
-  restore = checkout --
-  cn = commit --no-verify
-  co = checkout
-  praise = blame
-  visualise = !gitk
-  quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
-  quote-string-undo = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
-  cls = "!git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d #"
-  bclean = "!f() { git branch --merged ${1-develop} | grep -v " ${1-develop}$" | xargs -r git branch -d; }; f"
-  graph = log --color --graph --pretty=format:\"%h | %ad | %an | %s%d\" --date=short
-  st = status
-  rebaseidev = "!git rebase -i $(git merge-base --fork-point dev)"
-  rebasei = "!f() { git rebase -i $(git merge-base --fork-point \"$1\");}; f"
-  dif = "!f() { git diff --color  ${1} | sed -r \"s/^([^-+ ]*)[-+ ]/\\1/\" | less -r; }; f"
-  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/'
-  sync = "!f() { git branch -r | grep -v '\\->' | while read remote; do git branch --track \"${remote#origin/}\" \"$remote\"; done }; f"
+lg = log --color --graph --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ad)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --date=iso
+hist = log --color --graph --decorate --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+walk = log --color --decorate --walk-reflogs --pretty=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+unstage = reset HEAD --
+restore = checkout --
+cn = commit --no-verify
+co = checkout
+praise = blame
+visualise = !gitk
+quote-string = "!read -r l; printf \\\"!; printf %s \"$l\" | sed 's/\\([\\\"]\\)/\\\\\\1/g'; printf \" #\\\"\\n\" #"
+quote-string-undo = "!read -r l; printf %s \"$l\" | sed 's/\\\\\\([\\\"]\\)/\\1/g'; printf \"\\n\" #"
+cls = "!git branch --merged | egrep -v '(^\\*|master|dev)' | xargs git branch -d #"
+bclean = "!f() { git branch --merged ${1-develop} | grep -v " ${1-develop}$" | xargs -r git branch -d; }; f"
+graph = log --color --graph --pretty=format:\"%h | %ad | %an | %s%d\" --date=short
+st = status
+rebaseidev = "!git rebase -i $(git merge-base --fork-point dev)"
+rebasei = "!f() { git rebase -i $(git merge-base --fork-point \"$1\");}; f"
+dif = "!f() { git diff --color  ${1} | sed -r \"s/^([^-+ ]*)[-+ ]/\\1/\" | less -r; }; f"
+alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/'
+sync = "!f() { git branch -r | grep -v '\\->' | while read remote; do git branch --track \"${remote#origin/}\" \"$remote\"; done }; f"
 [core]
-  trustctime = false
-  editor =  "code --wait"
-  # editor = 'C:\\Program Files\\Sublime Text 3\\subl.exe' -w
-  ignorecase = false
-  longpaths = true
-	excludesFile = ~/.gitignore_global
-  autocrlf = true
-  safecrlf = false
+trustctime = false
+editor = "code --wait"
+# editor = 'C:\\Program Files\\Sublime Text 3\\subl.exe' -w
+ignorecase = false
+longpaths = true
+excludesFile = ~/.gitignore_global
+autocrlf = input
+safecrlf = false
 [filter "lfs"]
-  process = git-lfs filter-process
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
 [pull]
-  rebase = true
+rebase = true
 [diff]
-    tool = default-difftool
+tool = default-difftool
 [difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+cmd = code --wait --diff $LOCAL $REMOTE
 [push]
-    autoSetupRemote = true
+autoSetupRemote = true
 [credential]
-    helper = wincred
-    useHttpPath = true
+helper = wincred
+useHttpPath = true
 [safe]
-	directory = C:/github.com/dennisbot/gitbash-dotfiles
-	directory = C:/provistacorp/repos/EMS
-	directory = C:/github.com/dennisbot/sublime-user-settings
-	directory = C:/github.com/dennisbot/sublime-text-git
-	directory = C:/provistacorp/repos/EMS_Dev_Branch
+directory = C:/github.com/dennisbot/gitbash-dotfiles
+directory = C:/github.com/dennisbot/sublime-user-settings
+directory = C:/github.com/dennisbot/sublime-text-git
 [init]
-  defaultbranch = main
+defaultbranch = main

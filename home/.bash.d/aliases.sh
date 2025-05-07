@@ -13,7 +13,7 @@ alias cpwd='pwd | clip'
 alias gr='cd "$(git rev-parse --show-toplevel)"'
 alias os='subl "$(git rev-parse --show-toplevel)"'
 alias getremoteb="cls && git branch -r | grep -v '\->' | xargs -p -I % bash -c 'git branch --track ${0#origin/} $0' %"
-alias ss='start wt -d $PWD'
+alias ss='start wt'
 # alias ssm='start wt new-tab -p "{2e1f7332-f218-4e15-9abe-df88b7f3e6ef}"'
 alias ssm='start wt new-tab -p "{2e1f7332-f218-4e15-9abe-df88b7f3e6ef}" -d "$(cygpath -w "$PWD")"'
 

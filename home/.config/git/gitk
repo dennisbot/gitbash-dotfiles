@@ -56,9 +56,9 @@ set web_browser {cmd /c start}
 set geometry(main) 1920x997+0+24
 set geometry(state) zoomed
 set geometry(topwidth) 1920
-set geometry(topheight) 481
+set geometry(topheight) 440
 set geometry(pwsash0) "894 1"
 set geometry(pwsash1) "1178 1"
-set geometry(botwidth) 836
-set geometry(botheight) 511
+set geometry(botwidth) 1022
+set geometry(botheight) 552
 set permviews {}
