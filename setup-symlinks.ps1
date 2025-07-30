@@ -34,55 +34,7 @@ else {
   choco install firacode -y
 }
 
-function Get-Windows-Terminal-Home-Path {
-  param(
-    [string]$TargetFolder
-  )
 
-  $storePath = "$TargetFolder\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe"
-  $previewPath = "$TargetFolder\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe"
-
-  if (Test-Path $storePath) {
-      $wtLocalFilesFolder = $storePath
-  }
-  elseif (Test-Path $previewPath) {
-      $wtLocalFilesFolder = $previewPath
-  }
-  else {
-      # If Windows Terminal is not installed via Store or Preview, install it using Chocolatey
-      Write-Warning "Windows Terminal not found. Installing using Chocolatey..."
-
-      # Check if Chocolatey is installed
-      $chocoInstalled = $null -ne (Get-Command choco -ErrorAction SilentlyContinue)
-      if (-not $chocoInstalled) {
-          Write-Error "Chocolatey is not installed. Please install Chocolatey first."
-          return
-      }
-
-      # Install Windows Terminal using Chocolatey
-      if (-not (Get-Command wt -ErrorAction SilentlyContinue)) {
-          choco install microsoft-windows-terminal --pre -y
-
-          # Wait a moment for the installation to complete
-          Start-Sleep -Seconds 30
-      }
-
-      # Re-check if the path exists now after installation
-      if (Test-Path $storePath) {
-          $wtLocalFilesFolder = $storePath
-      }
-      elseif (Test-Path $previewPath) {
-          $wtLocalFilesFolder = $previewPath
-      }
-      else {
-          Write-Error "Failed to install Windows Terminal using Chocolatey or detect its path."
-          return
-      }
-  }
-
-  $windowsTerminalFolder = Join-Path -Path $wtLocalFilesFolder -ChildPath "LocalState"
-  return $windowsTerminalFolder
-}
 
 function Create-Symlinks {
   param(
@@ -141,15 +93,6 @@ if ($runDry) {
 }
 
 Create-Symlinks -TargetFolder $homeFolder -SourceFolder $sourceDotFilesFolder -RunDry $runDry
-
-# Prompt the user if they also want to run the Windows Terminal script
-$runWindowsTerminal = Read-Host "Do you also want to run the Windows Terminal script? (Y/N)"
-
-if ($runWindowsTerminal -eq "Y") {
-  $windowsTerminalFolder = Get-Windows-Terminal-Home-Path -TargetFolder $homeFolder
-  $sourceWindowsTerminalFolder = Join-Path -Path $PWD.Path -ChildPath "windows-terminal"
-  Create-Symlinks -TargetFolder $windowsTerminalFolder -SourceFolder $sourceWindowsTerminalFolder -RunDry $runDry
-}
 
 if ($runDry) {
   Write-Host "run dry has finished"
