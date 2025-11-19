@@ -1,6 +1,6 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
-    "$schema": "https://aka.ms/terminal-profiles-schema-preview",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
     [
         {
@@ -13,24 +13,6 @@
                 "action": "prevTab"
             },
             "id": "User.prevTab.0"
-        },
-        {
-            "command": 
-            {
-                "action": "multipleActions",
-                "actions": 
-                [
-                    {
-                        "action": "clearBuffer",
-                        "clear": "all"
-                    },
-                    {
-                        "action": "sendInput",
-                        "input": "\n"
-                    }
-                ]
-            },
-            "id": "User.multipleActions.2E965C05"
         },
         {
             "command": 
@@ -81,10 +63,6 @@
         {
             "id": "User.nextTab.0",
             "keys": "ctrl+pgdn"
-        },
-        {
-            "id": "User.multipleActions.2E965C05",
-            "keys": "ctrl+k"
         },
         {
             "id": "User.copy.644BA8F2",
@@ -147,6 +125,18 @@
                 "hidden": false,
                 "icon": "C:\\msys64\\mingw64.ico",
                 "name": "bash (MSYS2)"
+            },
+            {
+                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
+                "hidden": true,
+                "name": "Visual Studio Debug Console",
+                "source": "VSDebugConsole"
+            },
+            {
+                "guid": "{787dd5fc-929e-5984-b233-4d1e55d13873}",
+                "hidden": false,
+                "name": "podman-machine-default",
+                "source": "Microsoft.WSL"
             }
         ]
     },
