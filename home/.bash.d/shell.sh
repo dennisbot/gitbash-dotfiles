@@ -92,8 +92,20 @@ export hogent="${HOME}/OneDrive - Hogeschool Gent"
 # export documents="$HOME/Documents"
 # export dropbox="$HOME/Dropbox"
 
+#---------- Windows Terminal Integration --------------------------------------
+
+# Emit OSC 9;9 escape sequence to tell Windows Terminal the current working directory.
+# This enables "Duplicate Tab" (Ctrl+Shift+D) to open in the same directory.
+__wt_osc9_9() {
+    # Only emit if running inside Windows Terminal
+    if [[ -n "$WT_SESSION" ]]; then
+        # Convert Unix path to Windows path for WT
+        printf '\e]9;9;%s\e\\' "$(cygpath -w "$PWD")"
+    fi
+}
+
 # After each command, append to the history file and reread it
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r; __wt_osc9_9"
 # export PROMPT_COMMAND='history -a;history -c;history -r;$PROMPT_COMMAND'
 dd() {
     current_branch=$(git rev-parse --abbrev-ref HEAD)

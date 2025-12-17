@@ -3,6 +3,7 @@ function Get-Windows-Terminal-Home-Path {
     [string]$TargetFolder
   )
 
+  # %LOCALAPPDATA%
   $storePath = "$TargetFolder\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe"
   $previewPath = "$TargetFolder\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe"
 
