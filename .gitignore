@@ -1,2 +1,5 @@
 # Update notifier cache files
 home/.config/configstore
+
+# Claude Code local settings
+.claude/
