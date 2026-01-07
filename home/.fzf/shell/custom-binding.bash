@@ -1,5 +1,8 @@
-bind -x '"\e\C-s": "mkrecent"'
-bind -x '"\C-s": "fzf_pickexec"'
+# Only set up keybindings in interactive shells
+if [[ $- == *i* ]]; then
+    bind -x '"\e\C-s": "mkrecent"'
+    bind -x '"\C-s": "fzf_pickexec"'
+fi
 fzf_pickexec() {
     local files=($(ls --color=never -t *.exe | head -n 2))
     local file

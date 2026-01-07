@@ -26,7 +26,10 @@ set -o noclobber
 
 # Disable Ctrl-S keyboard shortcut for ScrollLock (locks up Vim)
 # Source: https://unix.stackexchange.com/questions/72086/ctrl-s-hang-terminal-emulator
-stty -ixon
+# Only run stty in interactive shells with a terminal
+if [[ $- == *i* ]] && [[ -t 0 ]]; then
+    stty -ixon
+fi
 
 # ---------- History ----------------------------------------------------------
 
@@ -42,28 +45,34 @@ export HISTIGNORE="&:ls:cd:cd -:pwd:exit:bg:fg"
 shopt -s histappend   # append to history, don't overwrite
 shopt -s cmdhist      # enter multi-line commands as one entry
 
-# Enable history expansion with space
-# E.g. typing !!<space> will replace the !! with your last command
-bind Space:magic-space
+# Only set up readline bindings in interactive shells
+if [[ $- == *i* ]]; then
+    # Enable history expansion with space
+    # E.g. typing !!<space> will replace the !! with your last command
+    bind Space:magic-space
 
-# Enable incremental history search with up/down arrows (also Readline goodness)
-# Learn more about this here:
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\e[C": forward-char'
-bind '"\e[D": backward-char'
+    # Enable incremental history search with up/down arrows (also Readline goodness)
+    # Learn more about this here:
+    bind '"\e[A": history-search-backward'
+    bind '"\e[B": history-search-forward'
+    bind '"\e[C": forward-char'
+    bind '"\e[D": backward-char'
+fi
 
 
 #---------- Completion --------------------------------------------------------
 
-# Perform file completion in a case insensitive fashion
-bind "set completion-ignore-case on"
+# Only set up completion options in interactive shells
+if [[ $- == *i* ]]; then
+    # Perform file completion in a case insensitive fashion
+    bind "set completion-ignore-case on"
 
-# Treat hyphens and underscores as equivalent
-bind "set completion-map-case on"
+    # Treat hyphens and underscores as equivalent
+    bind "set completion-map-case on"
 
-# Display matches for ambiguous patterns at first tab press
-bind "set show-all-if-ambiguous on"
+    # Display matches for ambiguous patterns at first tab press
+    bind "set show-all-if-ambiguous on"
+fi
 
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
