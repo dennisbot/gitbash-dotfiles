@@ -19,7 +19,7 @@ alias ssm='start wt new-tab -p "{2e1f7332-f218-4e15-9abe-df88b7f3e6ef}" -d "$(cy
 
 # Git
 alias ga='git add'
-# alias dd='gh dev..' we have a function that does more things in shell.sh
+# alias dd='git hist dev..' we have a function that does more things in shell.sh
 alias gb='git branch'
 alias gcb='git branch | fzf --height ~60 --reverse | xargs -I {} git checkout {}'
 alias gbd='git branch | fzf --height ~60 --reverse | xargs -I {} git branch -D {}'
@@ -28,7 +28,6 @@ alias mkrecent='make -f ~/Makefile FILE=$(ls --color=never -t *.cpp | head -n 1)
 alias mkc='make -f ~/Makefile clean'
 alias gc='git commit --no-verify -m'
 alias gd='git diff'
-alias gh='git hist'
 alias gl='git lg'
 alias gll='git log --pretty="format:%C(yellow)%h %C(blue)%ad %C(reset)%s%C(red)%d %C(green)%an%C(reset), %C(cyan)%ar" --date=short --graph --all'
 alias push='git push'
