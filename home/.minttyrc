@@ -1,11 +1,11 @@
 ThemeFile=base16-tomorrow-night-256.minttyrc
 FontHeight=16
-Font=Fira Code Retina
+Font=Hack Nerd Font Mono
 Transparency=low
 ForegroundColour=255,128,128
 CursorType=line
 FontSmoothing=full
-FontWeight=450
+FontWeight=400
 Columns=110
 Locale=en_US
 Charset=UTF-8
