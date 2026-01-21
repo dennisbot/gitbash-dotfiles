@@ -113,7 +113,13 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "colorScheme": "Dark+",
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe -l",
+                "font": 
+                {
+                    "face": "Hack Nerd Font Mono",
+                    "size": 14
+                },
                 "guid": "{473d9fe7-4cce-44b7-b1dc-4c8a8cfb4746}",
                 "hidden": false,
                 "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
