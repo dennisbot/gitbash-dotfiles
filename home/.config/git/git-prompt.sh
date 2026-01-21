@@ -3,12 +3,12 @@ PS1="$PS1"'\n'                 # new line
 TIME='\[\033[01;31m\]\t \[\033[01;32m\]'
 USER='\u ';
 # HOST='\033[02;36m\]\h \033[01;34m\]'
-HOST='\[\033[02;36m\]\h \[\033[01;34m\]'
+HOST='\[\033[01;36m\]\h '
 
 PS1="$TIME"
 PS1="$PS1$USER"
 PS1="$PS1$HOST"
-PS1="$PS1"'\w \[\033[00;33m\]'                 # current working directory
+PS1="$PS1"'\w \[\033[01;33m\]'                 # current working directory
 if test -z "$WINELOADERNOEXEC"
 then
   GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
@@ -19,7 +19,7 @@ then
   then
     . "$COMPLETION_PATH/git-completion.bash"
     . "$COMPLETION_PATH/git-prompt.sh"
-    PS1="$PS1"'\[\033[36m\]'  # change color to cyan
+    PS1="$PS1"'\[\033[00;33m\]'  # change color to yellow
     PS1="$PS1"'`__git_ps1 [%s]`'   # bash function
   fi
 fi
