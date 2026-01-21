@@ -15,6 +15,9 @@
 
 export EDITOR="sublime -n -w"
 
+# eza color configuration
+export EZA_COLORS="da=36:gm=36"
+
 # After each command, append to the history file and reread it
 # TODO
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
