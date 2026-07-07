@@ -24,6 +24,3 @@ if [ -n "${BASH_VERSION}" ]; then
     source "${HOME}/.bashrc"
   fi
 fi
-
-source "${HOME}/.bash_profile"
-

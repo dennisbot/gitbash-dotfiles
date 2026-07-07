@@ -18,4 +18,7 @@ for conf in $(ls ${conf_dir}/*.sh); do
 	source "${conf}"
 done
 
-# eval "$(fnm env --use-on-cd --shell bash)"
+# Source .profile if it exists
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
