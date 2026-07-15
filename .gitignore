@@ -3,3 +3,5 @@ home/.config/configstore
 
 # Claude Code local settings
 .claude/
+
+home/.config/containers/podman/machine/wsl/
