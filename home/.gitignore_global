@@ -38,3 +38,6 @@ Thumbs.db
 # Python virtualenv
 .ropeproject
 **/indexMiddleware.js
+
+**/.claude/settings.local.json
+home/.config/containers/podman/machine/wsl/

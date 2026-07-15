@@ -1,7 +1,7 @@
-# Update notifier cache files
-home/.config/configstore
+# Ignore everything in home/.config except the git config subtree
+home/.config/*
+!home/.config/git/
+!home/.config/git/**
 
 # Claude Code local settings
 .claude/
-
-home/.config/containers/podman/machine/wsl/
