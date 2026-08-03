@@ -95,12 +95,15 @@
     {
         "defaults": 
         {
-            "colorScheme": "Dark+",
+            "colorScheme": "Night Owl Dark+",
             "font": 
             {
                 "face": "Hack Nerd Font Mono",
                 "size": 14
-            }
+            },
+            "opacity": 90,
+            "useAcrylic": false,
+            "acrylicOpacity": 90
         },
         "list": 
         [
@@ -186,6 +189,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#A2734C"
+        },
+        {
+            "background": "#00111d",
+            "black": "#01111d",
+            "blue": "#5ca7ff",
+            "brightBlack": "#4d4d4d",
+            "brightBlue": "#82aaff",
+            "brightCyan": "#7fdbca",
+            "brightGreen": "#5af78e",
+            "brightPurple": "#c792ea",
+            "brightRed": "#ff5874",
+            "brightWhite": "#f8fbff",
+            "brightYellow": "#ffd98b",
+            "cursorColor": "#7eb6ff",
+            "cyan": "#2dd4bf",
+            "foreground": "#d6deeb",
+            "green": "#3ddc97",
+            "name": "Night Owl Dark+",
+            "purple": "#c792ea",
+            "red": "#ff6b6b",
+            "selectionBackground": "#17324d",
+            "white": "#e6f1ff",
+            "yellow": "#ffd166"
         }
     ],
     "showTabsInTitlebar": true,
