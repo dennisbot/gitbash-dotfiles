@@ -22,3 +22,6 @@ done
 if [ -f ~/.profile ]; then
     . ~/.profile
 fi
+
+# opencode
+export PATH=/c/Users/Usuario/.opencode/bin:$PATH
