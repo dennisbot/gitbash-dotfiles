@@ -14,8 +14,8 @@ fi
 conf_dir="${HOME}/.bash.d"
 
 # source extra config scripts from .bash.d/
-for conf in $(ls ${conf_dir}/*.sh); do
-	source "${conf}"
+for conf in "${conf_dir}"/*.sh; do
+	[[ -f "${conf}" ]] && source "${conf}"
 done
 
 # Source .profile if it exists
