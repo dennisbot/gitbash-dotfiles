@@ -2,6 +2,7 @@
 
 # Define the history file
 HISTORY_FILE="$HOME/.bash_eternal_history"
+MAX_HISTORY_LENGTH=78
 
 # Move most used commands to the end of the file, prioritizing shorter commands
 function prioritize_frequent_commands {
@@ -51,3 +52,11 @@ function clean_history {
 
 # Alias to trigger the cleanup
 alias clean_hist='clean_history'
+
+# Remove history lines that are MAX_HISTORY_LENGTH characters or longer
+function clean_long_history {
+  awk -v max="$MAX_HISTORY_LENGTH" 'length($0) < max' "$HISTORY_FILE" >"$HISTORY_FILE.tmp" && mv "$HISTORY_FILE.tmp" "$HISTORY_FILE"
+  echo "Removed commands of $MAX_HISTORY_LENGTH characters or longer from history."
+}
+
+alias clean_hist_long='clean_long_history'
