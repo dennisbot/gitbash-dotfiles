@@ -90,3 +90,4 @@ alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color=always --group-d
 alias lS='eza -1 --color=always --group-directories-first --icons'
 alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -E '^\.'"
+alias roslyn-language-server="cmd //c ~/.dotnet/tools/roslyn-language-server.cmd"
